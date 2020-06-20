@@ -3,20 +3,15 @@
 // @namespace		https://github.com/PurpleMagick/
 // @description		Replaces the word "folk" with other "people"
 // @author			VLAZ
-// @version			1
+// @version			1.1
 //
-// @include			/^https:\/\/(?:meta\.)?stackoverflow\.com/
-// @include			/^https:\/\/(?:meta\.)?serverfault\.com/
-// @include			/^https:\/\/(?:meta\.)?superuser\.com/
-// @include			/^https:\/\/(?:meta\.)?askubuntu\.com/
-// @include			/^https:\/\/(?:meta\.)?mathoverflow\.net/
-// @include			/^https:\/\/(?:meta\.)?stackapps\.com/
-// @include			/^https:\/\/(?:[^\/.]+\.)(?:meta\.)?stackexchange\.com/
-//
-// @exclude			https://chat.stackexchange.com
-// @exclude			https://chat.meta.stackexchange.com
-// @exclude			https://api.stackexchange.com
-// @exclude			https://data.stackexchange.com
+// @include			https://*.stackoverflow.com/*
+// @include			https://*.serverfault.com/*
+// @include			https://*.superuser.com/*
+// @include			https://*.askubuntu.com/*
+// @include			https://*.mathoverflow.net/*
+// @include			https://*.stackapps.com/*
+// @include			https://*.stackexchange.com/*
 //
 // @grant			none
 // ==/UserScript==
