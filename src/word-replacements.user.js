@@ -3,7 +3,7 @@
 // @namespace		https://github.com/PurpleMagick/
 // @description		Replaces the word "folk" with other "people"
 // @author			VLAZ
-// @version			0.0.2
+// @version			1
 //
 // @include			/^https:\/\/(?:meta\.)?stackoverflow\.com/
 // @include			/^https:\/\/(?:meta\.)?serverfault\.com/
@@ -46,7 +46,7 @@ function searchAndReplace(replacementConfig) {
 	};
 }
 
-function execute(startNode) {
+function main(startNode) {
 	const walker = document.createTreeWalker(startNode, NodeFilter.SHOW_TEXT, null, false);
 
 	let node;
@@ -56,4 +56,22 @@ function execute(startNode) {
 	}
 }
 
-execute(document.body);
+const callback = function(mutationsList) {
+	for(let mutation of mutationsList) {
+		const newNodesAdded = mutation.type === "childList" && mutation.addedNodes.length > 0;
+		const textChanged = mutation.type === "characterData";
+
+		if (newNodesAdded || textChanged){
+			main(mutation.target);
+		}
+	}
+};
+
+const observer = new MutationObserver(callback);
+
+//run once for the page initially
+main(document.body);
+
+//set up observer to re-run on future modifications
+const config = { characterData: true, childList: true, subtree: true };
+observer.observe(document.body, config);
