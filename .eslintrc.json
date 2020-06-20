@@ -13,21 +13,10 @@
     },
     "plugins": [],
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "eqeqeq": ["error", "always", {"null": "ignore"}],
+        "indent": [ "warn", "tab" ],
+        "linebreak-style": [ "warn", "unix" ],
+        "quotes": [ "warn", "double" ],
+        "semi": [ "warn", "always" ]
     }
 }
